@@ -11,24 +11,24 @@ body {
     /* font-family — свойство шрифта, значение — список */
     /* Браузер пробует Arial, если нет — Helvetica, если нет — любой sans-serif */
     font-family: Arial, Helvetica, sans-serif;
-    
+
     /* margin: 0 — убираем отступы по умолчанию у body */
     /* Без этого у body есть margin 8px от природы браузера */
     margin: 0;
-    
+
     /* padding: 0 — убираем внутренние отступы */
     padding: 0;
-    
+
     /* background-color — цвет фона всей страницы */
     /* HEX-формат: #RRGGBB, где RR — красный, GG — зеленый, BB — синий */
     /* f5f5f5 — светло-серый, почти белый */
-    background-color: #f5f5f5;
-    
+    background-color: #FDF0D5;
+
     /* line-height — межстрочный интервал */
     /* 1.6 = 160% от размера шрифта — улучшает читаемость */
     line-height: 1.6;
 
-     
+
 }
 
 /* 2. СТИЛИЗАЦИЯ ШАПКИ */
@@ -38,18 +38,18 @@ header {
     /* background — составное свойство для фона */
     /* linear-gradient — линейный градиент, угол 135 градусов (диагональ) */
     /* #667eea — сиреневый, #764ba2 — фиолетовый */
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    
+    background: linear-gradient(85deg, #331832 0%, #F26D69 100%);
+
     /* color — цвет текста */
     color: white;
-    
+
     /* text-align — выравнивание текста */
     text-align: center;
-    
+
     /* padding — внутренний отступ */
     /* 60px сверху/снизу, 20px слева/справа */
     padding: 60px 20px;
-    
+
     /* margin-bottom — внешний отступ снизу */
     /* Отодвигаем навигацию от шапки */
     margin-bottom: 40px;
@@ -59,7 +59,7 @@ header {
 header h1 {
     /* margin: 0 — убираем стандартный отступ у заголовка */
     margin: 0;
-    
+
     /* font-size — размер шрифта */
     font-size: 36px;
 }
@@ -68,9 +68,9 @@ header h1 {
 header p {
     /* margin — сверху 10px, остальные 0 */
     margin: 10px 0 0 0;
-    
+
     font-size: 22px;
-    
+
     /* opacity — прозрачность, 0 = невидимый, 1 = видимый */
     /* 0.9 = 90% непрозрачности */
     opacity: 0.9;
@@ -90,15 +90,15 @@ nav a {
     /* display: inline-block — строчно-блочный элемент */
     /* Отличие от inline: можно задавать width, height, padding сверху/снизу */
     display: inline-block;
-    
+
     color: white;
-    
+
     /* text-decoration — убираем подчёркивание у ссылок */
     text-decoration: none;
-    
+
     /* padding — создаём кликабельную область */
     padding: 15px 25px;
-    
+
     /* transition — анимация изменений */
     /* background-color будет меняться плавно 0.3 секунды */
     transition: background-color 0.3s;
@@ -106,7 +106,7 @@ nav a {
 
 /* ПСЕВДОКЛАСС :hover — применяется при наведении мыши */
 nav a:hover {
-    background-color: #555;
+    background-color: #888484;
 }
 
 /* 4. ОСНОВНОЙ КОНТЕНТ */
@@ -114,38 +114,84 @@ nav a:hover {
 main {
     /* max-width — максимальная ширина, но может быть меньше */
     max-width: 800px;
-    
+
     /* margin: 0 auto — гениальный трюк центрирования */
     /* 0 сверху/снизу, auto слева/справа — браузер вычисляет равные отступы */
     margin: 0 auto;
-    
+
     padding: 20px;
-    
+
+    color: #312e29;
+
     background-color: white;
-    
+
     /* box-shadow — тень: смещение X, смещение Y, размытие, цвет */
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(77, 76, 76, 0.1);
 }
 
 /* Селектор section */
 section {
     margin-bottom: 40px;
     padding: 20px;
-    
+
+
     /* border-left — левая граница */
     /* Толщина 4px, сплошная линия, цвет #667eea */
-    border-left: 4px solid #667eea;
-    
+    border-left: 4px solid #3a270b;
+
     /* border-radius — скругление углов */
     border-radius: 0 8px 8px 0;
 }
 
 /* 5. СТИЛИЗАЦИЯ СПИСКОВ */
 
+img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px;
+}
+
+img:hover {
+    transform: scale(1.5);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #292621;
+    color: #ddd;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: auto;
+    box-shadow: 0 4px 6px rgba(102, 126,234, 0.3);
+}
+
+.btn:hover {
+    background-color: #5a6fd8;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(102, 126, 234, 0.4);
+    
+}
+
+.btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(102, 126, 234, 00.3s);
+}
+
+.btn {
+    transform: translateY(-16px);
+}
+
 ul {
     /* list-style-type — убираем маркеры списка */
     list-style-type: none;
-    
+
     padding: 0;
 }
 
@@ -153,27 +199,83 @@ ul {
 ul li {
     padding: 10px;
     margin: 5px 0;
-    
+
+    color: #292621;
+
     background-color: #f0f0f0;
-    
+
     /* border-radius — скругление всех углов */
     border-radius: 5px;
-    
+
     /* transition для нескольких свойств */
     transition: background-color 0.3s, transform 0.3s;
+
+    position: relative;
+    padding-left: 35px;
+}
+
+/* ::before — псевдоэлемент, создаёт виртуальный элемент */
+ul li::before {
+    content: "✓";
+    position: absolute;
+    left: 10px;
+    color: #667eea;
+    font-weight: bold;
+}
+
+ul li:hover::before {
+    color: white;
 }
 
 ul li:hover {
-    background-color: #667eea;
+    background-color: #818380;
     color: white;
-    
+
     /* transform — трансформация элемента */
     /* scale(1.05) — увеличение на 5% */
     transform: scale(1.05);
-    
+
     /* cursor — меняем курсор */
     cursor: pointer;
 }
+
+/* Стилизация контейнеров and cards*/
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.project-card {
+    flex: 1 1 250px;
+    background: #f0f0f0;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+}
+
+.project-card:nth-child(1):hover {
+    transform: translate(-5px,-5px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.project-card:nth-child(2):hover {
+    transform: translate(5px, -5px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.project-card:nth-child(3):hover {
+    transform: translateY(10px) scale(1.05);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.project-card h3 {
+    margin-top: 0;
+    color: #333;
+}
+
 
 /* 6. ПОДВАЛ */
 
@@ -193,13 +295,24 @@ footer {
     header h1 {
         font-size: 32px;
     }
-    
+
+    nav {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+
     /* На мобильных ссылки становятся блочными (занимают всю ширину) */
     nav a {
+        border-bottom: 1px solid #444;
         display: block;
         padding: 10px;
     }
-    
+
+    nav a:last-child {
+        border-bottom: none;
+    }
+
     main {
         padding: 10px;
     }
