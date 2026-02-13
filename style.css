@@ -1,0 +1,206 @@
+/* 1. ГЛОБАЛЬНЫЙ СБРОС И БАЗОВЫЕ НАСТРОЙКИ */
+
+/* Универсальный селектор — применяем box-sizing ко ВСЕМ элементам */
+/* Это инженерное решение: теперь width = общая ширина, а не ширина контента */
+* {
+    box-sizing: border-box;
+}
+
+/* Селектор элемента body — применяем к тегу <body> */
+body {
+    /* font-family — свойство шрифта, значение — список */
+    /* Браузер пробует Arial, если нет — Helvetica, если нет — любой sans-serif */
+    font-family: Arial, Helvetica, sans-serif;
+    
+    /* margin: 0 — убираем отступы по умолчанию у body */
+    /* Без этого у body есть margin 8px от природы браузера */
+    margin: 0;
+    
+    /* padding: 0 — убираем внутренние отступы */
+    padding: 0;
+    
+    /* background-color — цвет фона всей страницы */
+    /* HEX-формат: #RRGGBB, где RR — красный, GG — зеленый, BB — синий */
+    /* f5f5f5 — светло-серый, почти белый */
+    background-color: #f5f5f5;
+    
+    /* line-height — межстрочный интервал */
+    /* 1.6 = 160% от размера шрифта — улучшает читаемость */
+    line-height: 1.6;
+
+     
+}
+
+/* 2. СТИЛИЗАЦИЯ ШАПКИ */
+
+/* Селектор элемента header */
+header {
+    /* background — составное свойство для фона */
+    /* linear-gradient — линейный градиент, угол 135 градусов (диагональ) */
+    /* #667eea — сиреневый, #764ba2 — фиолетовый */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    
+    /* color — цвет текста */
+    color: white;
+    
+    /* text-align — выравнивание текста */
+    text-align: center;
+    
+    /* padding — внутренний отступ */
+    /* 60px сверху/снизу, 20px слева/справа */
+    padding: 60px 20px;
+    
+    /* margin-bottom — внешний отступ снизу */
+    /* Отодвигаем навигацию от шапки */
+    margin-bottom: 40px;
+}
+
+/* Селектор h1 внутри header (вложенный) */
+header h1 {
+    /* margin: 0 — убираем стандартный отступ у заголовка */
+    margin: 0;
+    
+    /* font-size — размер шрифта */
+    font-size: 36px;
+}
+
+/* Селектор p внутри header */
+header p {
+    /* margin — сверху 10px, остальные 0 */
+    margin: 10px 0 0 0;
+    
+    font-size: 22px;
+    
+    /* opacity — прозрачность, 0 = невидимый, 1 = видимый */
+    /* 0.9 = 90% непрозрачности */
+    opacity: 0.9;
+}
+
+/* 3. СТИЛИЗАЦИЯ НАВИГАЦИИ */
+
+nav {
+    background-color: #333;
+    /* padding: 0 — убираем отступы */
+    padding: 0;
+    text-align: center;
+}
+
+/* Селектор ссылок внутри навигации */
+nav a {
+    /* display: inline-block — строчно-блочный элемент */
+    /* Отличие от inline: можно задавать width, height, padding сверху/снизу */
+    display: inline-block;
+    
+    color: white;
+    
+    /* text-decoration — убираем подчёркивание у ссылок */
+    text-decoration: none;
+    
+    /* padding — создаём кликабельную область */
+    padding: 15px 25px;
+    
+    /* transition — анимация изменений */
+    /* background-color будет меняться плавно 0.3 секунды */
+    transition: background-color 0.3s;
+}
+
+/* ПСЕВДОКЛАСС :hover — применяется при наведении мыши */
+nav a:hover {
+    background-color: #555;
+}
+
+/* 4. ОСНОВНОЙ КОНТЕНТ */
+
+main {
+    /* max-width — максимальная ширина, но может быть меньше */
+    max-width: 800px;
+    
+    /* margin: 0 auto — гениальный трюк центрирования */
+    /* 0 сверху/снизу, auto слева/справа — браузер вычисляет равные отступы */
+    margin: 0 auto;
+    
+    padding: 20px;
+    
+    background-color: white;
+    
+    /* box-shadow — тень: смещение X, смещение Y, размытие, цвет */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Селектор section */
+section {
+    margin-bottom: 40px;
+    padding: 20px;
+    
+    /* border-left — левая граница */
+    /* Толщина 4px, сплошная линия, цвет #667eea */
+    border-left: 4px solid #667eea;
+    
+    /* border-radius — скругление углов */
+    border-radius: 0 8px 8px 0;
+}
+
+/* 5. СТИЛИЗАЦИЯ СПИСКОВ */
+
+ul {
+    /* list-style-type — убираем маркеры списка */
+    list-style-type: none;
+    
+    padding: 0;
+}
+
+/* Селектор li внутри ul */
+ul li {
+    padding: 10px;
+    margin: 5px 0;
+    
+    background-color: #f0f0f0;
+    
+    /* border-radius — скругление всех углов */
+    border-radius: 5px;
+    
+    /* transition для нескольких свойств */
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+ul li:hover {
+    background-color: #667eea;
+    color: white;
+    
+    /* transform — трансформация элемента */
+    /* scale(1.05) — увеличение на 5% */
+    transform: scale(1.05);
+    
+    /* cursor — меняем курсор */
+    cursor: pointer;
+}
+
+/* 6. ПОДВАЛ */
+
+footer {
+    text-align: center;
+    padding: 30px;
+    background-color: #333;
+    color: white;
+    margin-top: 40px;
+}
+
+/* 7. АДАПТИВНОСТЬ ДЛЯ МОБИЛЬНЫХ */
+
+/* @media — медиа-запрос */
+/* (max-width: 768px) — если ширина экрана МЕНЬШЕ или равна 768px */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 32px;
+    }
+    
+    /* На мобильных ссылки становятся блочными (занимают всю ширину) */
+    nav a {
+        display: block;
+        padding: 10px;
+    }
+    
+    main {
+        padding: 10px;
+    }
+}
