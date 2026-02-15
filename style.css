@@ -158,8 +158,8 @@ img:hover {
 
 .btn {
     display: inline-block;
-    background-color: #292621;
-    color: #ddd;
+    background-color: #858383;
+    color: white;
     padding: 12px 30px;
     border: none;
     border-radius: 50px;
@@ -173,15 +173,17 @@ img:hover {
 }
 
 .btn:hover {
-    background-color: #5a6fd8;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(102, 126, 234, 0.4);
+    color: #333;
+    background-color: #cac7c7;
+    transform: scale(1.1) translateY(-22px);
+    box-shadow: 0 6px 12px rgba(86, 93, 126, 0.4);
     
 }
 
 .btn:active {
     transform: translateY(0);
-    box-shadow: 0 2px 4px rgba(102, 126, 234, 00.3s);
+    box-shadow: 0 2px 4px rgba(86, 93, 126, 0.2);
+    transform: scale(1.2);
 }
 
 .btn {
@@ -276,6 +278,35 @@ ul li:hover {
     color: #333;
 }
 
+/* Термометр настроения*/
+
+#moodInput {
+    padding: 8px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    margin-right: 10px;
+    width: 100%;
+    min-width: 200px;
+}
+
+#moodButton {
+    padding: 8px 15px;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#moodButton:hover {
+    background: #764ba2;
+}
+
+#moodResponse {
+    margin-top: 10px;
+    font-weight: bold;
+    min-width: 300px;
+}
 
 /* 6. ПОДВАЛ */
 
