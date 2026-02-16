@@ -306,6 +306,8 @@ ul li:hover {
     margin-top: 10px;
     font-weight: bold;
     min-width: 300px;
+    transition: opacity 0.5s;
+    opacity: 1;
 }
 
 /* 6. ПОДВАЛ */
