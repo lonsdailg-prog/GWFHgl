@@ -39,8 +39,8 @@ if (operator === "+") {
 alert(num1 + "" + operator + "" + num2 + "=" + result);
 */
 
-// let button = document.
-
+// Кнопка "Чирканите мне"
+/*
 let button = document.querySelector(".btn");
 let messagePlace = document.querySelector(".btn");
 
@@ -56,9 +56,9 @@ button.addEventListener("click", function () {
     }, 300);
   }, 2000);
 });
-
+*/
 //Термометр настроения
-/*
+
 let moodButton = document.getElementById("moodButton");
 let moodInput = document.getElementById("moodInput");
 let moodResponse = document.getElementById("moodResponse");
@@ -67,30 +67,22 @@ function handleMood() {
   moodResponse.style.opacity = "1";
 
   let mood = moodInput.value.toLowerCase().trim();
-  if (
-    mood === "хорошее" ||
-    mood === "хорошо" ||
-    mood === "норм" ||
-    mood === "ок"
-  ) {
+  const goodMoods = ["хорошее", "хорошо", "норм", "ок"];
+  const badMoods = ["плохое", "плохо", "дрянь", "говно", "хз"];
+  const philoMoods = [
+    "гегель",
+    "задумчивое",
+    "философия",
+    "разобраться в жизни",
+    "осмыслить",
+  ];
+  if (goodMoods.includes(mood)) {
     moodResponse.textContent = "🍻 Отлично, поддерживаю!";
     moodResponse.style.color = "green";
-  } else if (
-    mood === "плохое" ||
-    mood === "плохо" ||
-    mood === "дрянь" ||
-    mood === "говно" ||
-    mood === "хз"
-  ) {
+  } else if (badMoods.includes(mood)) {
     moodResponse.textContent = "🤝 Держись, прорвемся!";
-    moodResponse.style.color = "orange";
-  } else if (
-    mood === "гегель" ||
-    mood === "задумчивое" ||
-    mood === "философия" ||
-    mood === "разобраться в жизни" ||
-    mood === "осмыслить"
-  ) {
+    moodResponse.style.color = "red";
+  } else if (philoMoods.includes(mood)) {
     moodResponse.textContent = "🧠 О, ценитель! Респект!";
     moodResponse.style.color = "purple";
   } else {
@@ -103,6 +95,8 @@ function handleMood() {
     setTimeout(() => {
       moodResponse.textContent = "/фыва";
       moodResponse.style.color = "";
+      moodInput.value = "";
+      moodInput.focus();
     }, 300);
   }, 3000);
 }
@@ -116,7 +110,9 @@ if (moodButton) {
     }
   });
 }
-*/
+
+/*
+// Промптовый запрос - калькулятор возраста
 function askUser() {
   let userName = prompt("What is your name?");
 
@@ -154,3 +150,54 @@ function askUser() {
   }
 }
 askUser();
+*/
+
+// Кнопка "Чирканите мне" - добавляем Enter
+
+let button = document.querySelector(".btn");
+let messagePlace = document.querySelector(".btn");
+
+function askName() {
+  let name = prompt("What is your name");
+
+  /*if (name === null) {
+    messagePlace.textContent = "Hi, I'm glad to meet you here";
+    startTimer();
+    return;
+  }*/
+
+  let trimmedName = (name ?? "").trim();
+  messagePlace.textContent =
+    trimmedName === ""
+      ? "Hi, I'm glad to meet you here"
+      : "Hi, ${trimmedName}, I'm glad to meet you here";
+  startTimer();
+
+  if (trimmedName === "") {
+    messagePlace.textContent = "Hi, I'm glad to meet you here";
+  } else {
+    messagePlace.textContent = `Hi, ${trimmedName}, I'm glad to meet you here`;
+  }
+  startTimer();
+  /*messagePlace.textContent =
+    "Hi " + trimmedName + ", I'm glad to meet you here";
+  startTimer();*/
+}
+function startTimer() {
+  setTimeout(() => {
+    messagePlace.style.opacity = "0";
+    setTimeout(() => {
+      messagePlace.textContent = "";
+      button.textContent = "Чирканите мне";
+      messagePlace.style.opacity = "1";
+    }, 300);
+  }, 2000);
+}
+
+if (button) {
+  button.addEventListener("click", askName);
+}
+
+/*
+
+ messagePlace.textContent = "Hi, " + name + ", I'm glad to meet you here";*/

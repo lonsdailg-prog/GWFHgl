@@ -147,7 +147,7 @@ section {
 
 img {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-radius: 10px;
+    border-radius: 20px;
 }
 
 img:hover {
