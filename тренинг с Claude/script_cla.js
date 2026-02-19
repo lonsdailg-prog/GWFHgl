@@ -156,3 +156,82 @@ console.log("Процент пятёрок:", persentFive + " %");
 Средний бал: 4.07
 Процент пятёрок: 40 % 
 */
+/*
+let secret = Math.floor(Math.random() * 20 + 1);
+let attempts = [];
+let guess;
+
+while (guess !== secret) {
+  guess = Number(prompt("Guess number:"));
+  attempts.push(guess);
+
+  if (guess < secret) {
+    alert("Secret number is more");
+  } else if (guess > secret) {
+    alert("Secret number is less");
+  }
+}
+
+let totalAttempts = attempts.length;
+
+console.log("Загадано число:", secret);
+console.log("Количество попыток:", totalAttempts);
+console.log("История попыток:");
+
+for (i = 0; i < attempts.length; i++) {
+  console.log(`Attempt ${i + 1}: ${attempts[i]}`);
+}
+*/
+/*
+let numbers = [5, 12, 8, 3, 17, 9, 25, 1, 14];
+let sum = numbers.reduce((acc, n) => acc + n, 0);
+console.log(sum);
+
+let bigs = numbers.filter((n) => n > 10);
+console.log("more than 10:", bigs);
+
+let doubled = numbers.map((n) => n * 2);
+console.log("Doubled:", doubled);
+
+let firstResult = numbers.find((n) => n > 15);
+console.log("First mor than 15:", firstResult);
+
+let ifThereIs = numbers.includes(17) && numbers.includes(9);
+console.log("If includes...", ifThereIs);
+*/
+
+let ages = [15, 22, 18, 30, 12, 45, 17, 25];
+let words = ["привет", "мир", "javascript", "код", "программирование"];
+
+let olds = ages.filter((n) => n >= 18);
+let doubles = olds.map((n) => n * 2);
+console.log(doubles);
+/* - попытка через for () - not good
+let longWords = [];
+
+for (i = 0; i < words.length; i++) {
+  if (words[i].length > 5) {
+    longWords.push(words[i]);
+  }
+}
+ */
+let capitals = words
+  .filter((word) => word.length > 5)
+  .map((word) => word.toUpperCase());
+
+console.log(capitals);
+
+let sum = olds.reduce((acc, n) => acc + n, 0);
+let averages = sum / olds.length;
+console.log(averages);
+
+let teenAgers = !!ages.find((n) => n >= 13 && n <= 17);
+console.log(teenAgers);
+
+let hasTeens = ages.some((age) => age >= 13 && age <= 17);
+console.log(hasTeens);
+
+let longWord = words.reduce((a, b) => (b.length > a.length ? b : a));
+console.log(longWord);
+
+
