@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-card {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+#profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border: 3px solid #667eea
+}
+
+#profile-image:hover {
+    transform: scale(1.05);
+}
+
+#user-name {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+#user-bio {
+    color:#666;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+h3 {
+    color: #555;
+    margin: 20px 0 10px;
+    text-align: left;
+
+}
+
+#skills-list {
+    list-style: none;
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+#skills-list li {
+    background: #f0f0f0;
+    margin: 8px 0;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+#skills-list li:hover {
+    background: #667eea;
+    color: white;
+    transform: translateX(10px);
+}
+
+#edit-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: transform 0.3s, bax-shadow 0.3s;
+}
+
+#edit-btn:hover {
+    transform: translateY (-2px);
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+}
+
+#edit-btn:active {
+    transform: translateY(0);
+}

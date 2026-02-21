@@ -102,6 +102,30 @@
             text-align: center;
             color: #666;
         }
+
+        .task-completed {
+            text-decoration: line-through;
+            opacity: 0.6;
+        }
+
+        .checkbox {
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        #clearAll {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        #clearAll:hover {
+            background-color: #c0392b;
+        }
     </style>
 </head>
 
@@ -120,6 +144,7 @@
 
         <div class="stats">
             <span id="taskCount">Задач: 0</span>
+            <button id ='clearAll'>Очистить всё</button>
         </div>
     </div>
 

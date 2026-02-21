@@ -71,23 +71,38 @@ function renderTasks() {
     tasks.forEach(task => {
         //создать элементы
         let li = document.createElement('li');
+        let checkbox = document.createElement('input');
         let span = document.createElement('span');
-        let button = document.createElement('button');
-        //удаление
-        
+        let button = document.createElement('button');        
         //классы
         li.className = 'task-item';
+
+        checkbox.type = 'checkbox';
+        checkbox.className = 'checkbox';
+        checkbox.checked = task.completd;
+
         span.className = 'task-text';
+        if (task.completed) {
+            span.classList.add('task-completed');
+        }
+
         button.className = 'delete-btn';
         //текст
         span.textContent = task.text
         button.textContent = "Удалить";
+
+        checkbox.addEventListener('change', () => {
+            task.completed = !task.completed;
+            renderTasks();
+        })
     
         button.addEventListener("click", () => {
         tasks = tasks.filter(t => t.id !== task.id);
         renderTasks();
+        
     });
-        //вложенность
+    //вложенность
+    li.appendChild(checkbox);
         li.appendChild(span);
         li.appendChild(button);
         //на страницу
@@ -96,4 +111,23 @@ function renderTasks() {
     });
         // Счётчик
     counTask.textContent = `Задач: ${tasks.length}`;
-}
+
+};
+
+inTask.addEventListener("keypress", function(event) {
+    console.log("Нажата клавиша:", event.key);
+    if (event.key === "Enter") {
+        handleNewTask();
+    }
+});
+
+let clearAll = document.getElementById('clearAll');
+
+clearAll.addEventListener('click', function () {
+    if (tasks.length === 0) {
+        return;
+    }else if (confirm('Удалить все задачи?')) {
+        tasks = [];
+        renderTasks();
+    }
+})
